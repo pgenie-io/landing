@@ -5137,3 +5137,7 @@ a:not(.btn):hover {
 .section.section--r95i0858iu42dkki {
   --color: rgb(255, 255, 255);
 }
+
+.zigzagItem__text {
+  text-shadow: 0px 0px 7px #282828;
+}
