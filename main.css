@@ -5141,3 +5141,8 @@ a:not(.btn):hover {
 .zigzagItem__text {
   text-shadow: 0px 0px 7px #282828;
 }
+
+.ftPoint__description b {
+  color: #F8F8F0;
+  font-weight: 500;
+}
