@@ -16,27 +16,6 @@
 </head>
 
 <body>
-  <script>
-  ! function() {
-    const e = false;
-    window.SendEvent = function(n) {
-      if (!n) return void console.error('error when sending event');
-      const t = JSON.stringify({ siteId: n.siteId, category: n.category, name: n.name, data: n.data, isPriorBlockingEnabled: e });
-      if (n.asBeacon && navigator.sendBeacon) return void navigator.sendBeacon('/api/event', t);
-      let o = new XMLHttpRequest;
-      o.open('POST', '/api/event', !0), o.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8'), o.send(t)
-    }
-  }();
-  </script>
-  <script>
-  ! function() {
-    const e = false;
-    window.PageView = function() {
-      let n = new XMLHttpRequest;
-      n.open('POST', '/api/view', !0), n.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8'), n.send(JSON.stringify({ referrer: document.referrer, path: window.location.pathname, isPriorBlockingEnabled: e }))
-    }
-  }();
-  </script>
   <div id="header" class="section header section--cxhfw30xith6voui" style="--wr-max:1030px;color:rgb(249, 38, 114)">
     <div class="wr color-1" style="margin-top:10px;margin-bottom:10px">
       <div id="headerNav"><a id="headerLogo" href="https://pgenie.io" class="header__logo" style="font-weight:700;font-size:26px">pGenie</a>
@@ -46,19 +25,8 @@
       </div>
     </div>
   </div>
-  <div id="titles" class="section section--titles section--center" style="background-color:rgb(0, 0, 0);padding-bottom:60px;padding-top:60px;--pdx-min-height:0px;--wr-max:1030px">
-    <div id="headerSpacer" style="height:50px"></div>
-    <script>
-    ! function() {
-      var e, t = document.getElementById("header"),
-        n = document.getElementById("headerSpacer");
-      t && n && (e = t.getBoundingClientRect().height, n.setAttribute("style", "height:" + e + "px"))
-    }()
-    </script>
+  <div id="titles" class="section section--titles section--center" style="background-color:black;padding:180px 0 120px 0;--pdx-min-height:0px;--wr-max:1030px">
     <div class="wr">
-      <div class="iconWrapper medium true titleIcon" style="width:34px;height:34px;margin-bottom:15px">
-        <div class="icon medium titleIcon" style="height:34px;width:34px;background-image:url(https://landen.imgix.netundefined?w=68)"></div>
-      </div>
       <h1 class="color-1 weight-title-h font-title section__title center">SQL transpiler for PostgreSQL</h1>
       <p class="weight-text section__subtitle center" style="margin-bottom:0">Validates queries, generates multiplatform client code</p>
     </div>
