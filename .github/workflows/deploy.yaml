@@ -15,7 +15,7 @@ jobs:
         with:
           args: --acl public-read --follow-symlinks --delete --exclude '.git/*'
         env:
-          AWS_S3_ENDPOINT: storage.yandexcloud.net
+          AWS_S3_ENDPOINT: https://storage.yandexcloud.net
           AWS_REGION: ru-central1
           AWS_ACCESS_KEY_ID: ${{ secrets.SA_PUBLIC_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SA_PRIVATE_KEY }}
