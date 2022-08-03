@@ -19,4 +19,4 @@ jobs:
           AWS_REGION: ru-central1
           AWS_ACCESS_KEY_ID: ${{ secrets.SA_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SA_ACCESS_KEY_SECRET }}
-          AWS_S3_BUCKET: www.pgenie.io
+          AWS_S3_BUCKET: pgenie.io
