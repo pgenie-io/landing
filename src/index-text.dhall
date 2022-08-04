@@ -1,5 +1,7 @@
 let P = https://prelude.dhall-lang.org/package.dhall
 
+let Gtag = ./gtag.dhall
+
 in  \(index : ./Index.dhall) ->
       ''
       <!DOCTYPE html>
@@ -17,7 +19,7 @@ in  \(index : ./Index.dhall) ->
         <link rel="stylesheet" href="main.css">
         <style type="text/css"></style>
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:700|Inter:700,400,500&amp;display=fallback" rel="stylesheet">
-        ${./gtag-head.dhall index.ga-id}
+        ${Gtag.head-elements index.ga-id}
       </head>
 
       <body>
