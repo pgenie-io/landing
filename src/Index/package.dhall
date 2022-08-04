@@ -244,13 +244,10 @@ let page-doc =
                   <div class="ft__content">
                     <h2 class="color-1 weight-title-h font-title section__title center" style="margin-bottom:0">What pGenie can do</h2>
                     <div class="ft__description">
-                      ${P.Text.concat
-                          ( P.List.map
-                              WhatPgenieCanDoItem
-                              Text
-                              what-pgenie-can-do-item-elements
-                              page.what-pgenie-can-do
-                          )}
+                      ${P.Text.concatMap
+                          WhatPgenieCanDoItem
+                          what-pgenie-can-do-item-elements
+                          page.what-pgenie-can-do}
                     </div>
                   </div>
                 </div>
@@ -267,13 +264,10 @@ let page-doc =
                   <div class="ft__content">
                     <h2 class="color-1 weight-title-h font-title section__title center" style="margin-bottom:0">What&#x27;s coming</h2>
                     <div class="ft__description">
-                      ${P.Text.concat
-                          ( P.List.map
-                              WhatsComingItem
-                              Text
-                              whats-coming-item-elements
-                              page.whats-coming
-                          )}
+                      ${P.Text.concatMap
+                          WhatsComingItem
+                          whats-coming-item-elements
+                          page.whats-coming}
                     </div>
                   </div>
                 </div>
@@ -309,13 +303,10 @@ let page-doc =
                     <h2 class="hero__title color-1 weight-title-h font-title">Install pGenie</h2>
                     <P class="hero__subtitle weight-text">Precompiled distros are available for the following platforms:</P>
                     <div class="ctas">
-                      ${P.Text.concat
-                          ( P.List.map
-                              InstallButton
-                              Text
-                              (install-button-elements page.cli-version)
-                              page.install-buttons
-                          )}
+                      ${P.Text.concatMap
+                          InstallButton
+                          (install-button-elements page.cli-version)
+                          page.install-buttons}
                     </div>
                     <div class="hero__ctaInfo">
                       <P>Place the downloaded binary in any location listed in the <code>PATH</code> env variable. E.g., <code>/usr/local/bin</code>.</P>
