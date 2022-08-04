@@ -2,6 +2,8 @@ let P = https://prelude.dhall-lang.org/package.dhall
 
 let Gtag = ./Gtag/package.dhall
 
+let Index = ./Index/package.dhall
+
 let cli-version = "v1.0.0"
 
 let install-button-elements =
