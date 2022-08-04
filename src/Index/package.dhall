@@ -98,7 +98,7 @@ let page-doc =
           <div id="titles" class="section section--titles section--center" style="background-color:black;padding:180px 0 120px 0;--pdx-min-height:0px;--wr-max:1030px">
             <div class="wr">
               <h1 class="color-1 weight-title-h font-title section__title center">${page.description}</h1>
-              <P class="weight-text section__subtitle center" style="margin-bottom:0">Validates queries, generates multiplatform client code</P>
+              <p class="weight-text section__subtitle center" style="margin-bottom:0">Validates queries, generates multiplatform client code</p>
             </div>
           </div>
           <div class="section section--feature section--noPadding section--center" style="background-color:rgb(22, 22, 22);--pdx-min-height:0px;--wr-max:1030px">
@@ -119,7 +119,7 @@ let page-doc =
                         <div class="ftPoint__meta">
                           <h3 class="ftPoint__title color-1 weight-text-m">Release the development resources</h3>
                           <div class="ftPoint__description">
-                            <P>There is no need to develop, maintain or test the DB layer of your app. It can be automated.</P>
+                            <p>There is no need to develop, maintain or test the DB layer of your app. It can be automated.</p>
                           </div>
                         </div>
                       </div>
@@ -132,7 +132,7 @@ let page-doc =
                         <div class="ftPoint__meta">
                           <h3 class="ftPoint__title color-1 weight-text-m">Increase the reliability of your applications</h3>
                           <div class="ftPoint__description">
-                            <P>Most DB-compatiblity bugs become impossible. The generated code is guaranteed to correctly match your schema.</P>
+                            <p>Most DB-compatiblity bugs become impossible. The generated code is guaranteed to correctly match your schema.</p>
                           </div>
                         </div>
                       </div>
@@ -145,7 +145,7 @@ let page-doc =
                         <div class="ftPoint__meta">
                           <h3 class="ftPoint__title color-1 weight-text-m">Version-control your DB development</h3>
                           <div class="ftPoint__description">
-                            <P>pGenie facilitates database evolution under version control and continuous deployment by design.</P>
+                            <p>pGenie facilitates database evolution under version control and continuous deployment by design.</p>
                           </div>
                         </div>
                       </div>
@@ -169,21 +169,21 @@ let page-doc =
                   <div class="zigzagItem__graphic"><img src="stage-1.png" class="" srcset="stage-1-2x.png 2x" alt="Migration"></div>
                   <div class="zigzagItem__content"><span class="zigzagItem__number"></span>
                     <h3 class="zigzagItem__title color-1 weight-text-m">Specify Schema</h3>
-                    <div class="zigzagItem__text"><P>Using schema migration files in SQL</P></div>
+                    <div class="zigzagItem__text"><p>Using schema migration files in SQL</p></div>
                   </div>
                 </div>
                 <div class="zigzagItem">
                   <div class="zigzagItem__graphic"><img src="stage-2.png" class="" srcset="stage-2-2x.png 2x" alt="Queries"></div>
                   <div class="zigzagItem__content"><span class="zigzagItem__number"></span>
                     <h3 class="zigzagItem__title color-1 weight-text-m">Specify Queries</h3>
-                    <div class="zigzagItem__text"><P>In SQL as well</P></div>
+                    <div class="zigzagItem__text"><p>In SQL as well</p></div>
                   </div>
                 </div>
                 <div class="zigzagItem">
                   <div class="zigzagItem__graphic"><img src="stage-3.png" class="" srcset="stage-3-2x.png 2x" alt="Generated Code"></div>
                   <div class="zigzagItem__content"><span class="zigzagItem__number"></span>
                     <h3 class="zigzagItem__title color-1 weight-text-m">Generate SDKs</h3>
-                    <div class="zigzagItem__text"><P>By running the pGenie CLI app</P></div>
+                    <div class="zigzagItem__text"><p>By running the pGenie CLI app</p></div>
                   </div>
                 </div>
               </div>
@@ -198,7 +198,7 @@ let page-doc =
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
                     <h2 class="hero__title color-1 weight-title-h font-title">Try out the demo</h2>
-                    <P class="hero__subtitle weight-text">Get a quick feel of pGenie by playing with our demonstration project.</P>
+                    <p class="hero__subtitle weight-text">Get a quick feel of pGenie by playing with our demonstration project.</p>
                     <div class="ctas"><a id="btn_ajydwiqx16" class="btn btn--large" href="https://github.com/pgenie-io/demo" target="_blank" rel="noopener noreferrer">
                         <div class="iconWrapper medium true" style="width:1em;height:1em"><svg class="icon icon--button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="1em" height="1em">
                             <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252a250.7 250.7 0 0 0 169.5 239.2c12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9a94.5 94.5 0 0 1 2.6-67.9c20.9-6.5 69 27 69 27a235 235 0 0 1 125.6 0s48.1-33.6 69-27a94.4 94.4 0 0 1 2.6 67.9c16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" fill="rgb(255, 255, 255)"></path>
@@ -226,7 +226,7 @@ let page-doc =
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
                     <h2 class="hero__title color-1 weight-title-h font-title">Status and pricing</h2>
-                    <P class="hero__subtitle weight-text">pGenie is in <span style="color:#66D9EF;font-weight:bold">public beta</span>. All features are available for <span style="color:#66D9EF;font-weight:bold">free</span> until it goes out of beta.</P>
+                    <p class="hero__subtitle weight-text">pGenie is in <span style="color:#66D9EF;font-weight:bold">public beta</span>. All features are available for <span style="color:#66D9EF;font-weight:bold">free</span> until it goes out of beta.</p>
                     <div class="ctas"></div>
                     <div class="hero__ctaInfo"></div>
                   </div>
@@ -283,7 +283,7 @@ let page-doc =
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
                     <h2 class="hero__title color-1 weight-title-h font-title">Keep informed</h2>
-                    <P class="hero__subtitle weight-text">Stay up to date with our latest developments by subscribing to our Twitter account.</P>
+                    <p class="hero__subtitle weight-text">Stay up to date with our latest developments by subscribing to our Twitter account.</p>
                     <div class="ctas"><a class="btn btn--large" href="https://twitter.com/pgenie-io" target="_blank"
                       ${Gtag.event-onclick-attributes
                           { action = "open"
@@ -307,7 +307,7 @@ let page-doc =
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
                     <h2 class="hero__title color-1 weight-title-h font-title">Install pGenie</h2>
-                    <P class="hero__subtitle weight-text">Precompiled distros are available for the following platforms:</P>
+                    <p class="hero__subtitle weight-text">Precompiled distros are available for the following platforms:</p>
                     <div class="ctas">
                       ${P.Text.concatMap
                           InstallButton
@@ -315,9 +315,9 @@ let page-doc =
                           page.install-buttons}
                     </div>
                     <div class="hero__ctaInfo">
-                      <P>Place the downloaded binary in any location listed in the <code>PATH</code> env variable. E.g., <code>/usr/local/bin</code>.</P>
-                      <P>If your platform is not available, you can build from source. Check out <a href="https://github.com/pgenie-io/cli#building-from-source">the instructions</a>.</P>
-                      <P>Check out <a href="https://github.com/pgenie-io/demo">the demo</a> for an exhaustive explanation on how to use pGenie.</P>
+                      <p>Place the downloaded binary in any location listed in the <code>PATH</code> env variable. E.g., <code>/usr/local/bin</code>.</p>
+                      <p>If your platform is not available, you can build from source. Check out <a href="https://github.com/pgenie-io/cli#building-from-source">the instructions</a>.</p>
+                      <p>Check out <a href="https://github.com/pgenie-io/demo">the demo</a> for an exhaustive explanation on how to use pGenie.</p>
                     </div>
                   </div>
                 </div>
