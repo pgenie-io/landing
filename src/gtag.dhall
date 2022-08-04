@@ -1,6 +1,8 @@
 let P =
       https://raw.githubusercontent.com/dhall-lang/dhall-lang/v21.1.0/Prelude/package.dhall
 
+let Html = ./html.dhall
+
 let head-elements =
       \(id : Text) ->
         ''
@@ -35,9 +37,6 @@ let event-trigger-js =
         in  "gtag(\"event\",\"${z.action}\"${attributes-text})"
 
 let event-trigger-attributes =
-      \(z : Event) ->
-        let value = P.Text.replace "\"" "\$quot;" (event-trigger-js z)
-
-        in  "onclick=\"${value}\""
+      \(z : Event) -> Html.attribute "onclick" (event-trigger-js z)
 
 in  { head-elements, event-trigger-attributes, Event }
