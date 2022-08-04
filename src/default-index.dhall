@@ -1,4 +1,7 @@
-{ whats-coming =
+{ ga-id = "G-TTTTY8GJZQ"
+, title = "pGenie"
+, description = "SQL transpiler for PostgreSQL"
+, whats-coming =
   [ { title = "Stored procedures support"
     , content =
         "Generation of code that integrates with stored procedures and functions."

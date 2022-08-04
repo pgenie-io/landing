@@ -9,14 +9,15 @@ in  \(index : ./Index.dhall) ->
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-        <title>pGenie</title>
-        <meta name="twitter:title" content="pGenie">
-        <meta name="description" content="SQL transpiler for PostgreSQL">
-        <meta name="twitter:description" content="SQL transpiler for PostgreSQL">
+        <title>${index.title}</title>
+        <meta name="twitter:title" content="${index.title}">
+        <meta name="description" content="${index.description}">
+        <meta name="twitter:description" content="${index.description}">
         <link rel="canonical" href="https://pgenie.io">
         <link rel="stylesheet" href="main.css">
         <style type="text/css"></style>
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:700|Inter:700,400,500&amp;display=fallback" rel="stylesheet">
+        ${./gtag-head.dhall index.ga-id}
       </head>
 
       <body>
@@ -31,7 +32,7 @@ in  \(index : ./Index.dhall) ->
         </div>
         <div id="titles" class="section section--titles section--center" style="background-color:black;padding:180px 0 120px 0;--pdx-min-height:0px;--wr-max:1030px">
           <div class="wr">
-            <h1 class="color-1 weight-title-h font-title section__title center">SQL transpiler for PostgreSQL</h1>
+            <h1 class="color-1 weight-title-h font-title section__title center">${index.description}</h1>
             <P class="weight-text section__subtitle center" style="margin-bottom:0">Validates queries, generates multiplatform client code</P>
           </div>
         </div>
