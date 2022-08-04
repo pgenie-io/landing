@@ -1,4 +1,4 @@
-\(x : ./WhatPgenieCanDoItem) ->
+\(x : ./WhatPgenieCanDoItem.dhall) ->
   ''
   <div class="ftPoint">
     <div class="iconWrapper small circle" style="width:28px;height:28px"><svg class="backdrop" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">

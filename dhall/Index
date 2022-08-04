@@ -1,3 +1,0 @@
-{ whats-coming : List ./WhatsComingItem
-, what-pgenie-can-do : List ./WhatPgenieCanDoItem
-}
