@@ -2,7 +2,7 @@ let P = https://prelude.dhall-lang.org/package.dhall
 
 let Gtag = ../Gtag/package.dhall
 
-let InstallButton = { label : Text, url-suffix : Text }
+let InstallButton = { label : Text, name : Text, extension : Text }
 
 let WhatsComingItem = { title : Text, content : Text }
 
@@ -55,11 +55,11 @@ let install-button-elements =
       \(version : Text) ->
       \(z : InstallButton) ->
         ''
-        <a class="btn btn--large" href="https://github.com/pgenie-io/cli/releases/download/${version}/pgenie-cli-${version}-${z.url-suffix}.zip" target="_blank"
+        <a class="btn btn--large" href="https://github.com/pgenie-io/cli/releases/download/${version}/pgenie-cli-${version}-${z.name}.${z.extension}" target="_blank"
         ${Gtag.event-onclick-attributes
             { action = "open"
             , category = Some "install-buttons"
-            , label = Some z.url-suffix
+            , label = Some z.name
             }}
         >${z.label}</a>
         ''
