@@ -1,7 +1,6 @@
 #!/bin/bash
 set -eo pipefail
 
+dhall version
 mkdir -p dist
-./build-scripts/format.bash
-
 dhall --explain text --output dist/index.html <<< './src/index.dhall'
