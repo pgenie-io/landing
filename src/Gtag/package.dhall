@@ -36,7 +36,7 @@ let event-trigger-js =
 
         in  "gtag(\"event\",\"${z.action}\"${attributes-text})"
 
-let event-trigger-attributes =
+let event-onclick-attributes =
       \(z : Event) -> Html.attribute "onclick" (event-trigger-js z)
 
-in  { head-elements, event-trigger-attributes, Event }
+in  { head-elements, event-onclick-attributes, Event }
