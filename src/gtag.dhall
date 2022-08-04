@@ -18,11 +18,7 @@ let Event = { action : Text, category : Optional Text, label : Optional Text }
 let event-trigger-js =
       \(z : Event) ->
         let attribute =
-              \(name : Text) ->
-              \(value : Text) ->
-                ''
-                ${name}:"${value}"
-                ''
+              \(name : Text) -> \(value : Text) -> "${name}:\"${value}\""
 
         let attribute-texts =
               P.List.unpackOptionals
@@ -34,20 +30,14 @@ let event-trigger-js =
         let attributes-text =
               if    P.List.null Text attribute-texts
               then  ""
-              else  ''
-                    ,{${P.Text.concatSep "," attribute-texts}}
-                    ''
+              else  ",{${P.Text.concatSep "," attribute-texts}}"
 
-        in  ''
-            gtag("event","${z.action}"${attributes-text})
-            ''
+        in  "gtag(\"event\",\"${z.action}\"${attributes-text})"
 
 let event-trigger-attributes =
-      P.Function.compose
-        Event
-        Text
-        Text
-        event-trigger-js
-        (P.Text.replace "\"" "\$quot;")
+      \(z : Event) ->
+        let value = P.Text.replace "\"" "\$quot;" (event-trigger-js z)
+
+        in  "onclick=\"${value}\""
 
 in  { head-elements, event-trigger-attributes, Event }
