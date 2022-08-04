@@ -1,6 +1,6 @@
 let P = https://prelude.dhall-lang.org/package.dhall
 
-let Gtag = ./gtag.dhall
+let Gtag = ./Gtag/package.dhall
 
 let cli-version = "v1.0.0"
 
