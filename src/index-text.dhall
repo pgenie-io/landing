@@ -8,7 +8,13 @@ let install-button-elements =
       \(label : Text) ->
       \(url-suffix : Text) ->
         ''
-        <a class="btn btn--large" href="https://github.com/pgenie-io/cli/releases/download/${version}/pgenie-cli-${version}-${url-suffix}.zip" target="_blank">${label}</a>
+        <a class="btn btn--large" href="https://github.com/pgenie-io/cli/releases/download/${version}/pgenie-cli-${version}-${url-suffix}.zip" target="_blank"
+        ${Gtag.event-trigger-attributes
+            { action = "download"
+            , category = Some "download"
+            , label = Some url-suffix
+            }}
+        >${label}</a>
         ''
 
 in  \(index : ./Index.dhall) ->
