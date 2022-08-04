@@ -43,6 +43,11 @@ let event-trigger-js =
             ''
 
 let event-trigger-attributes =
-      \(z : Event) -> P.Text.replace "\"" "\$quot;" (event-trigger-js z)
+      P.Function.compose
+        Event
+        Text
+        Text
+        event-trigger-js
+        (P.Text.replace "\"" "\$quot;")
 
 in  { head-elements, event-trigger-attributes, Event }
