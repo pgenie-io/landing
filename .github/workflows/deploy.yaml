@@ -8,11 +8,13 @@ jobs:
     name: Upload to S3
     runs-on: ubuntu-latest
     steps:
-      - name: Set up dhall
-        uses: dhall-lang/setup-dhall@v4
-
       - name: Check out the source code
         uses: actions/checkout@v3
+
+      - name: Set up dhall
+        uses: dhall-lang/setup-dhall@v4
+        with:
+          version: 1.41.1
 
       - name: Build
         run: |
@@ -30,6 +32,7 @@ jobs:
             --exclude '.*/*'
             --exclude 'build-scripts'
             --exclude 'src'
+            --exclude 'share'
         env:
           AWS_S3_ENDPOINT: https://storage.yandexcloud.net
           AWS_REGION: ru-central1
