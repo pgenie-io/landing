@@ -55,7 +55,7 @@ let install-button-elements =
       \(version : Text) ->
       \(z : InstallButton) ->
         ''
-        <a class="btn btn--large" href="https://github.com/pgenie-io/cli/releases/download/${version}/pgenie-cli-${version}-${z.name}.${z.extension}" target="_blank"
+        <a class="btn btn--large" href="https://github.com/pgenie-io/cli/releases/download/${version}/pgenie-cli-${version}-${z.name}.${z.extension}"
         ${Gtag.event-onclick-attributes
             { action = "open"
             , category = Some "install-buttons"
