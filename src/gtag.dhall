@@ -13,20 +13,15 @@ let head-elements =
         </script>
         ''
 
-let Event =
-      { action : Text
-      , category : Optional Text
-      , label : Optional Text
-      , value : Optional Integer
-      }
+let Event = { action : Text, category : Optional Text, label : Optional Text }
 
-let event-trigger-attributes =
+let event-trigger-js =
       \(z : Event) ->
         let attribute =
               \(name : Text) ->
               \(value : Text) ->
                 ''
-                ${name}:&quot;${value}&quot;
+                ${name}:"${value}"
                 ''
 
         let attribute-texts =
@@ -44,7 +39,10 @@ let event-trigger-attributes =
                     ''
 
         in  ''
-            onclick="gtag(&quot;event&quot;,&quot;${z.action}&quot;${attributes-text})"
+            gtag("event","${z.action}"${attributes-text})
             ''
+
+let event-trigger-attributes =
+      \(z : Event) -> P.Text.replace "\"" "\$quot;" (event-trigger-js z)
 
 in  { head-elements, event-trigger-attributes, Event }
