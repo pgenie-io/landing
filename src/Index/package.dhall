@@ -57,8 +57,8 @@ let install-button-elements =
         ''
         <a class="btn btn--large" href="https://github.com/pgenie-io/cli/releases/download/${version}/pgenie-cli-${version}-${z.url-suffix}.zip" target="_blank"
         ${Gtag.event-onclick-attributes
-            { action = "install"
-            , category = Some "install"
+            { action = "open"
+            , category = Some "install-buttons"
             , label = Some z.url-suffix
             }}
         >${z.label}</a>
@@ -206,8 +206,8 @@ let page-doc =
                             style="margin-left:0.3em;padding-left:2px"
                             ${Gtag.event-onclick-attributes
                                 { action = "open"
-                                , category = Some "demo"
-                                , label = None Text
+                                , category = Some "buttons"
+                                , label = Some "demo"
                                 }}
                             >Open the demo project at GitHub</span>
                       </a></div>
@@ -284,7 +284,13 @@ let page-doc =
                   <div class="ft__content">
                     <h2 class="hero__title color-1 weight-title-h font-title">Keep informed</h2>
                     <P class="hero__subtitle weight-text">Stay up to date with our latest developments by subscribing to our Twitter account.</P>
-                    <div class="ctas"><a id="btn_cnacrr52elw" class="btn btn--large" href="https://twitter.com/pgenie-io" target="_blank" rel="noopener noreferrer">
+                    <div class="ctas"><a class="btn btn--large" href="https://twitter.com/pgenie-io" target="_blank"
+                      ${Gtag.event-onclick-attributes
+                          { action = "open"
+                          , category = Some "buttons"
+                          , label = Some "twitter"
+                          }}
+                      >
                         <div class="iconWrapper medium true" style="width:1em;height:1em"><svg class="icon icon--button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em">
                             <path d="M459.4 151.7c.3 4.6.3 9.1.3 13.7 0 138.7-105.6 298.5-298.6 298.5A296.5 296.5 0 0 1 0 417a217 217 0 0 0 25.3 1.2c49 0 94.3-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8a111 111 0 0 0 47.4-2 105 105 0 0 1-84.1-103v-1.2c14 7.8 30.2 12.6 47.4 13.3A104.9 104.9 0 0 1 35.7 67.2a298.3 298.3 0 0 0 216.4 109.9 104.9 104.9 0 0 1 179-95.8 206.6 206.6 0 0 0 66.6-25.4 104.7 104.7 0 0 1-46.1 57.8c21-2.3 41.6-8.1 60.4-16.2a225.6 225.6 0 0 1-52.6 54.2z" fill="rgb(255, 255, 255)"></path>
                           </svg></div><span style="margin-left:0.3em;padding-left:2px">Open pGenie Twitter</span>
@@ -329,7 +335,7 @@ let page-doc =
                   <li><a href="https://twitter.com/pgenie-io" target="_blank" class="color-2"
                     ${Gtag.event-onclick-attributes
                         { action = "open"
-                        , category = Some "contact"
+                        , category = Some "contacts"
                         , label = Some "twitter"
                         }}
                     ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
