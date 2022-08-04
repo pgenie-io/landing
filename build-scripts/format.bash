@@ -1,5 +1,5 @@
 #!/bin/bash
 set -eo pipefail
 
-dhall format --transitive dhall/index-text.dhall
-dhall format --transitive dhall/default-index.dhall
+dhall format --transitive src/index-text.dhall
+dhall format --transitive src/default-index.dhall
