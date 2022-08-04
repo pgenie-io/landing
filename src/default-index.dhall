@@ -39,7 +39,7 @@
     }
   , { title = "DSLs support"
     , content =
-        "Modern alternatives to SQL arise. E.g., <a href=\"https://prql-lang.org/\">prql</a>. pGenie can be extended to support such formats alongside SQL."
+        "Modern alternatives to SQL arise. E.g., Prql. pGenie can be extended to support such formats alongside SQL."
     }
   ]
 , what-pgenie-can-do =
