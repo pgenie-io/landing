@@ -8,19 +8,16 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the source code
+        uses: actions/checkout@v3
+
       - name: Set up Dhall
         uses: dhall-lang/setup-dhall@v4
         with:
           version: 1.41.1
 
-      - name: Check out the source code
-        uses: actions/checkout@v3
-        with:
-          path: repo
-
       - name: Build
         run: |
-          cd repo
           build-scripts/build.bash
           mv dist/index.html static
 
@@ -40,4 +37,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.SA_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SA_ACCESS_KEY_SECRET }}
           AWS_S3_BUCKET: pgenie.io
-          SOURCE_DIR: repo/static
+          SOURCE_DIR: static
