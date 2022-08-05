@@ -15,11 +15,21 @@ let head-elements =
         </script>
         ''
 
-let Event = { action : Text, category : Optional Text, label : Optional Text }
+let Event =
+      { action : Text
+      , category : Optional Text
+      , label : Optional Text
+      , value : Optional Natural
+      }
 
 let event-trigger-js =
       \(z : Event) ->
-        let attribute =
+        let natural-attribute =
+              \(name : Text) ->
+              \(value : Natural) ->
+                "${name}:${P.Natural.show value}"
+
+        let text-attribute =
               \(name : Text) -> \(value : Text) -> "${name}:\"${value}\""
 
         let attributes-texts =
@@ -28,9 +38,18 @@ let event-trigger-js =
                 [ P.Optional.map
                     Text
                     Text
-                    (attribute "event_category")
+                    (text-attribute "event_category")
                     z.category
-                , P.Optional.map Text Text (attribute "event_label") z.label
+                , P.Optional.map
+                    Text
+                    Text
+                    (text-attribute "event_label")
+                    z.label
+                , P.Optional.map
+                    Natural
+                    Text
+                    (natural-attribute "value")
+                    z.value
                 ]
 
         let attributes-params =
