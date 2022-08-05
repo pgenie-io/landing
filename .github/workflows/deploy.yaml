@@ -1,7 +1,16 @@
 on:
-  push:
-    branches:
-      - master
+  workflow_call:
+    inputs:
+      version-position:
+        type: string
+        required: true
+        description: |
+          Version position to bump on successful deployment.
+
+          One of:
+          - major
+          - minor
+          - patch
 
 jobs:
   deploy:
@@ -44,3 +53,4 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: ${{ inputs.version_position }}

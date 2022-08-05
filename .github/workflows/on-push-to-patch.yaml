@@ -1,0 +1,11 @@
+on:
+  push:
+    branches:
+      - patch
+
+jobs:
+  build-image:
+    uses: ./.github/workflows/deploy.yaml
+    secrets: inherit
+    with:
+      version-position: patch
