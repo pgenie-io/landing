@@ -84,9 +84,9 @@ let page-doc =
           <meta name="twitter:description" content="${page.description}">
           <link rel="canonical" href="https://pgenie.io">
           <link rel="stylesheet" href="main.css">
-          <style type="text/css"></style>
           <link href="https://fonts.googleapis.com/css?family=Fira+Sans:700|Inter:700,400,500&amp;display=fallback" rel="stylesheet">
           ${Gtag.head-elements page.ga-id}
+          ${YandexMetrika.head-elements page.yandex-metrika-id}
         </head>
 
         <body>
