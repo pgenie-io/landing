@@ -25,8 +25,12 @@ let event-trigger-js =
         let attributes-texts =
               P.List.unpackOptionals
                 Text
-                [ P.Optional.map Text Text (attribute "category") z.category
-                , P.Optional.map Text Text (attribute "label") z.label
+                [ P.Optional.map
+                    Text
+                    Text
+                    (attribute "event_category")
+                    z.category
+                , P.Optional.map Text Text (attribute "event_label") z.label
                 ]
 
         let attributes-params =
