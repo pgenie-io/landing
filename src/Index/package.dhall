@@ -42,9 +42,7 @@ let what-pgenie-can-do-item-elements =
             </svg></div>
           <div class="ftPoint__meta">
             <h3 class="ftPoint__title color-1 weight-text-m">${z.title}</h3>
-            <div class="ftPoint__description">
-              ${z.content}
-            </div>
+            <div class="ftPoint__description">${z.content}</div>
           </div>
         </div>
         ''
