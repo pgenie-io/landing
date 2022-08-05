@@ -34,7 +34,9 @@ let event-trigger-js =
               then  ""
               else  ",{${P.Text.concatSep "," attributes-texts}}"
 
-        in  "gtag(\"event\",\"${z.action}\"${attributes-params})"
+        let action = P.Text.replace "-" "_" z.action
+
+        in  "gtag(\"event\",\"${action}\"${attributes-params})"
 
 let event-onclick-attributes =
       \(z : Event) -> Html.attribute "onclick" (event-trigger-js z)
