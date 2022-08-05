@@ -22,19 +22,19 @@ let event-trigger-js =
         let attribute =
               \(name : Text) -> \(value : Text) -> "${name}:\"${value}\""
 
-        let attribute-texts =
+        let attributes-texts =
               P.List.unpackOptionals
                 Text
                 [ P.Optional.map Text Text (attribute "category") z.category
                 , P.Optional.map Text Text (attribute "label") z.label
                 ]
 
-        let attributes-text =
-              if    P.List.null Text attribute-texts
+        let attributes-params =
+              if    P.List.null Text attributes-texts
               then  ""
-              else  ",{${P.Text.concatSep "," attribute-texts}}"
+              else  ",{${P.Text.concatSep "," attributes-texts}}"
 
-        in  "gtag(\"event\",\"${z.action}\"${attributes-text})"
+        in  "gtag(\"event\",\"${z.action}\"${attributes-params});console.log(\"reported\",\"${z.action}\"${attributes-params})"
 
 let event-onclick-attributes =
       \(z : Event) -> Html.attribute "onclick" (event-trigger-js z)
