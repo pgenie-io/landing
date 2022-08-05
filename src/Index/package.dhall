@@ -21,15 +21,7 @@ let Page =
       , install-buttons : List InstallButton
       }
 
-let gtag-onclick-attributes =
-      \(action : Text) ->
-      \(category : Text) ->
-        Gtag.event-onclick-attributes
-          { action
-          , category = Some category
-          , label = None Text
-          , value = None Natural
-          }
+let gtag-onclick-attributes = \(action : Text) -> \(category : Text) -> ""
 
 let what-pgenie-can-do-item-elements =
       \(z : WhatPgenieCanDoItem) ->
@@ -90,7 +82,6 @@ let page-doc =
           <link rel="canonical" href="https://pgenie.io">
           <link rel="stylesheet" href="main.css">
           <link href="https://fonts.googleapis.com/css?family=Fira+Sans:700|Inter:700,400,500&amp;display=fallback" rel="stylesheet">
-          ${Gtag.head-elements page.ga-id}
           ${YandexMetrika.head-elements page.yandex-metrika-id}
         </head>
 
