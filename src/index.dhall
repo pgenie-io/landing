@@ -2,6 +2,7 @@ let Index = ./Index/package.dhall
 
 in  Index.page-doc
       { ga-id = "G-TTTTY8GJZQ"
+      , yandex-metrika-id = "89787597"
       , title = "pGenie"
       , description = "SQL transpiler for PostgreSQL"
       , whats-coming =

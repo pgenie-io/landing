@@ -2,6 +2,8 @@ let P = https://prelude.dhall-lang.org/package.dhall
 
 let Gtag = ../Gtag/package.dhall
 
+let YandexMetrika = ../YandexMetrika/package.dhall
+
 let InstallButton = { label : Text, name : Text, extension : Text }
 
 let WhatsComingItem = { title : Text, content : Text }
@@ -13,6 +15,7 @@ let Page =
       , description : Text
       , cli-version : Text
       , ga-id : Text
+      , yandex-metrika-id : Text
       , whats-coming : List WhatsComingItem
       , what-pgenie-can-do : List WhatPgenieCanDoItem
       , install-buttons : List InstallButton
