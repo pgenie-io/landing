@@ -53,3 +53,4 @@ jobs:
           RELEASE_BRANCHES: major,minor,patch
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: ${{ inputs.version_position }}
+          WITH_V: true
