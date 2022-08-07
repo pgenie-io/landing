@@ -48,8 +48,8 @@ jobs:
 
       - name: Bump version and push tag
         id: tag-release
-        uses: mathieudutour/github-tag-action@v6.0
-        with:
-          release_branches: major,minor,patch
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          default_bump: ${{ inputs.version_position }}
+        uses: anothrNick/github-tag-action@1.39.0
+        env:
+          RELEASE_BRANCHES: major,minor,patch
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: ${{ inputs.version_position }}
