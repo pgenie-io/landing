@@ -3,6 +3,7 @@ let Index = ./Index/package.dhall
 in  Index.page-doc
       { ga-id = "G-TTTTY8GJZQ"
       , yandex-metrika-id = "89787597"
+      , cloudflare-analytics-token = Some "fbce9e68253a465085e91bf1f8a25b5e"
       , title = "pGenie"
       , description = "SQL transpiler for PostgreSQL"
       , whats-coming =

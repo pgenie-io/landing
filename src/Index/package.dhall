@@ -4,6 +4,8 @@ let Gtag = ../Gtag/package.dhall
 
 let YandexMetrika = ../YandexMetrika/package.dhall
 
+let CloudflareAnalytics = ../CloudflareAnalytics/package.dhall
+
 let InstallButton = { label : Text, name : Text, extension : Text }
 
 let WhatsComingItem = { title : Text, content : Text }
@@ -16,6 +18,7 @@ let Page =
       , cli-version : Text
       , ga-id : Text
       , yandex-metrika-id : Text
+      , cloudflare-analytics-token : Optional Text
       , whats-coming : List WhatsComingItem
       , what-pgenie-can-do : List WhatPgenieCanDoItem
       , install-buttons : List InstallButton
@@ -338,6 +341,10 @@ let page-doc =
               </div>
             </div>
           </footer>
+          ${P.Text.defaultMap
+              Text
+              CloudflareAnalytics.body-elements
+              page.cloudflare-analytics-token}
         </body>
 
         </html>
