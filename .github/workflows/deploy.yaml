@@ -50,6 +50,6 @@ jobs:
         id: tag-release
         uses: mathieudutour/github-tag-action@v6.0
         with:
-          release_branches: major, minor, patch
+          release_branches: patch
           github_token: ${{ secrets.GITHUB_TOKEN }}
           default_bump: ${{ inputs.version_position }}
