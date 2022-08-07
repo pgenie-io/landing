@@ -52,5 +52,5 @@ jobs:
         env:
           RELEASE_BRANCHES: major,minor,patch
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BUMP: ${{ inputs.version_position }}
+          DEFAULT_BUMP: ${{ inputs.version-position }}
           WITH_V: true
