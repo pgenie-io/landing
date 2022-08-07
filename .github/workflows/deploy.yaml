@@ -26,9 +26,7 @@ jobs:
           version: 1.41.1
 
       - name: Build
-        run: |
-          build-scripts/build.bash
-          mv dist/index.html static
+        run: build-scripts/build.bash
 
       - name: Upload to object storage
         uses: jakejarvis/s3-sync-action@v0.5.1
@@ -46,7 +44,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.SA_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SA_ACCESS_KEY_SECRET }}
           AWS_S3_BUCKET: pgenie.io
-          SOURCE_DIR: static
+          SOURCE_DIR: dist
 
       - name: Bump version and push tag
         id: tag-release
