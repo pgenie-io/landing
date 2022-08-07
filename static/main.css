@@ -5146,3 +5146,7 @@ a:not(.btn):hover {
   color: #F8F8F0;
   font-weight: 500;
 }
+
+body {
+  background-color: black;
+}
