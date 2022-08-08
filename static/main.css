@@ -3219,7 +3219,9 @@ body {
 
   .zigzagItem__number {
     font-size: 50pt;
-    top: -10pt;
+    top: -45pt;
+    left: 0;
+    width: 100%;
   }
 
 }
