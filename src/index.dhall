@@ -63,7 +63,7 @@ in  Index.page-doc
         , { title = "Client SDKs generation"
           , content =
               ''
-                <p>Generate client libraries for <b>Haskell</b> and <b>Java</b>. These libraries provide high-level typed APIs specialised to your DB. Type-mapping, parameterisation, result decoding, query execution and not only - are all solved for you and are hidden under the hood of very simple APIs.</p>
+                <p>Generate client libraries for <b>Haskell</b> and <b>Java</b>. These libraries provide high-level typesafe APIs specialised to your DB. Type-mapping, parameterisation, result decoding, query execution and not only - are all solved for you and are hidden under the hood of very simple APIs.</p>
               ''
           }
         ]
