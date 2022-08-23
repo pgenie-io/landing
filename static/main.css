@@ -3109,8 +3109,6 @@ body {
 .zigzagItem__graphic {
   display: flex;
   width: 50%;
-  height: 350px;
-  max-width: 350px;
   align-items: center
 }
 
@@ -3185,6 +3183,7 @@ body {
   }
 
   .zigzagItem__graphic {
+    width: 100%;
     height: 200px
   }
 
@@ -3211,8 +3210,7 @@ body {
   }
 
   .zigzagItem__graphic {
-    max-width: 300px;
-    width: 100%;
+    width: 120%;
     height: 300px;
     order: 2
   }
