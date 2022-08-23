@@ -67,7 +67,7 @@ in  Index.page-doc
               ''
           }
         ]
-      , cli-version = "v1.0.0"
+      , cli-version = "v1.0.1"
       , install-buttons =
         [ { label = "Windows x64", name = "windows-x64", extension = "zip" }
         , { label = "macOS x64", name = "macos-x64", extension = "tar.xz" }
