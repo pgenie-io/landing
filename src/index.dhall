@@ -38,6 +38,13 @@ in  Index.page-doc
           , content =
               "When all queries are known it&#x27;s possible to resolve which indices are lacking."
           }
+        , { title = "Documentation hosting"
+          , content = "Accurate, up-to-date documentation generation."
+          }
+        , { title = "Mocking DB hosting"
+          , content =
+              "A freshly instantiated mocking DB might come in handy for testing and development."
+          }
         , { title = "Deep query analysis"
           , content =
               "Simulations on generated data helping fine-grained performance tuning."
