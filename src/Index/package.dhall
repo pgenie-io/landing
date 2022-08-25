@@ -173,7 +173,7 @@ let page-doc =
                 </g>
               </svg></div>
             <div class="wr">
-              <h2 class="color-1 weight-title-h font-title section__title center" style="margin-bottom:50px">How it works</h2>
+              <h2 id="how-it-works" class="color-1 weight-title-h font-title section__title center" style="margin-bottom:50px">How it works</h2>
               <div class="zigzag showNumbers">
                 <div class="zigzagItem">
                   <div class="zigzagItem__graphic"><img src="stage-1.png" class="" srcset="stage-1-2x.png 2x" alt="Migration"></div>
@@ -207,7 +207,7 @@ let page-doc =
               <div class="ft__half">
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
-                    <h2 class="hero__title color-1 weight-title-h font-title">Try out the demo</h2>
+                    <h2 id="try-out-the-demo" class="hero__title color-1 weight-title-h font-title">Try out the demo</h2>
                     <p class="hero__subtitle weight-text">Get a quick feel of pGenie by playing with our demonstration project.</p>
                     <div class="ctas"><a class="btn btn--large" href="https://github.com/pgenie-io/demo" target="_blank"
                         ${gtag-onclick-attributes "open_demo" "call_to_action"}
@@ -229,7 +229,7 @@ let page-doc =
               <div class="ft__half">
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
-                    <h2 class="hero__title color-1 weight-title-h font-title">Status and pricing</h2>
+                    <h2 id="status-and-pricing" class="hero__title color-1 weight-title-h font-title">Status and pricing</h2>
                     <p class="hero__subtitle weight-text">pGenie is in <span style="color:#66D9EF;font-weight:bold">public beta</span>. All features are available for <span style="color:#66D9EF;font-weight:bold">free</span> until it goes out of beta.</p>
                     <div class="ctas"></div>
                     <div class="hero__ctaInfo"></div>
@@ -246,7 +246,7 @@ let page-doc =
               <div class="ft__half">
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
-                    <h2 class="color-1 weight-title-h font-title section__title center" style="margin-bottom:0">What pGenie can do</h2>
+                    <h2 id="what-pgenie-can-do" class="color-1 weight-title-h font-title section__title center" style="margin-bottom:0">What pGenie can do</h2>
                     <div class="ft__description">
                       ${P.Text.concatMap
                           WhatPgenieCanDoItem
@@ -266,7 +266,7 @@ let page-doc =
               <div class="ft__half">
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
-                    <h2 class="color-1 weight-title-h font-title section__title center" style="margin-bottom:0">What&#x27;s coming</h2>
+                    <h2 id="whats-coming" class="color-1 weight-title-h font-title section__title center" style="margin-bottom:0">What&#x27;s coming</h2>
                     <div class="ft__description">
                       ${P.Text.concatMap
                           WhatsComingItem
@@ -286,7 +286,7 @@ let page-doc =
               <div class="ft__half">
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
-                    <h2 class="hero__title color-1 weight-title-h font-title">Keep informed</h2>
+                    <h2 id="keep-informed" class="hero__title color-1 weight-title-h font-title">Keep informed</h2>
                     <p class="hero__subtitle weight-text">Stay up to date with our latest developments by subscribing to our Twitter account.</p>
                     <div class="ctas"><a class="btn btn--large" href="https://twitter.com/pgenie_io" target="_blank"
                       ${gtag-onclick-attributes "open-twitter" "call_to_action"}
@@ -306,7 +306,7 @@ let page-doc =
               <div class="ft__half">
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
-                    <h2 class="hero__title color-1 weight-title-h font-title">Install pGenie</h2>
+                    <h2 id="install-pgenie" class="hero__title color-1 weight-title-h font-title">Install pGenie</h2>
                     <p class="hero__subtitle weight-text">Precompiled distros are available for the following platforms:</p>
                     <div class="ctas">
                       ${P.Text.concatMap
