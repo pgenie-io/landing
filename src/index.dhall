@@ -5,7 +5,7 @@ in  Index.page-doc
       , yandex-metrika-id = "89787597"
       , cloudflare-analytics-token = None Text
       , title = "pGenie"
-      , description = "SQL transpiler for PostgreSQL"
+      , description = "Reduce the development by generating client SDKs from plain SQL. Raise the quality with automatic validation of migrations and queries. No more mapping fuss, impedance mismatch or compatibility bugs! Haskell, Java, more coming."
       , value-prop =
         [ { title = "Release the development resources"
           , content =
