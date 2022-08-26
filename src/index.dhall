@@ -6,6 +6,23 @@ in  Index.page-doc
       , cloudflare-analytics-token = None Text
       , title = "pGenie"
       , description = "SQL transpiler for PostgreSQL"
+      , value-prop =
+        [ { title = "Release the development resources"
+          , content =
+              "There is no need to develop, maintain or test the DB layer of your app. It can be automated."
+          , icon = Index.Icon.man-plus
+          }
+        , { title = "Increase the reliability of your applications"
+          , content =
+              "Most DB-compatiblity bugs become impossible. The generated code is guaranteed to correctly match your schema."
+          , icon = Index.Icon.checklist
+          }
+        , { title = "Version-control your DB development"
+          , content =
+              "pGenie facilitates database evolution under version control and continuous deployment by design."
+          , icon = Index.Icon.branching
+          }
+        ]
       , whats-coming =
         [ { title = "Stored procedures support"
           , content =

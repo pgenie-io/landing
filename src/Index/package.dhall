@@ -12,6 +12,10 @@ let WhatsComingItem = { title : Text, content : Text }
 
 let WhatPgenieCanDoItem = { title : Text, content : Text }
 
+let Icon = < man-plus | checklist | branching >
+
+let ValuePropItem = { title : Text, content : Text, icon : Icon }
+
 let Page =
       { title : Text
       , description : Text
@@ -22,6 +26,7 @@ let Page =
       , whats-coming : List WhatsComingItem
       , what-pgenie-can-do : List WhatPgenieCanDoItem
       , install-buttons : List InstallButton
+      , value-prop : List ValuePropItem
       }
 
 let gtag-onclick-attributes =
@@ -58,6 +63,50 @@ let whats-coming-item-elements =
               <circle cx="40" cy="42" r="14" transform="translate(-26 -28)" fill="rgb(230, 219, 116)" fill-rule="nonzero"></circle>
             </svg>
           </div>
+          <div class="ftPoint__meta">
+            <h3 class="ftPoint__title color-1 weight-text-m">${z.title}</h3>
+            <div class="ftPoint__description">${z.content}</div>
+          </div>
+        </div>
+        ''
+
+let man-plus-icon-elements =
+      ''
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#000" height="28" width="28" viewBox="0 0 640 512">
+        <path d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+      </svg>
+      ''
+
+let checklist-icon-elements =
+      ''
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#000" height="28" width="28" viewBox="0 0 512 512">
+        <path d="M208 132h288c8.8 0 16-7.2 16-16V76c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h288c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h288c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zM64 368c-26.5 0-48.6 21.5-48.6 48s22.1 48 48.6 48 48-21.5 48-48-21.5-48-48-48zm92.5-299l-72.2 72.2-15.6 15.6c-4.7 4.7-12.9 4.7-17.6 0L3.5 109.4c-4.7-4.7-4.7-12.3 0-17l15.7-15.7c4.7-4.7 12.3-4.7 17 0l22.7 22.1 63.7-63.3c4.7-4.7 12.3-4.7 17 0l17 16.5c4.6 4.7 4.6 12.3-.1 17zm0 159.6l-72.2 72.2-15.7 15.7c-4.7 4.7-12.9 4.7-17.6 0L3.5 269c-4.7-4.7-4.7-12.3 0-17l15.7-15.7c4.7-4.7 12.3-4.7 17 0l22.7 22.1 63.7-63.7c4.7-4.7 12.3-4.7 17 0l17 17c4.6 4.6 4.6 12.2-.1 16.9z"></path>
+      </svg>
+      ''
+
+let branching-icon-elements =
+      ''
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#000" height="28" width="28" viewBox="0 0 384 512">
+        <path d="M384 144c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 36.4 24.3 67.1 57.5 76.8-.6 16.1-4.2 28.5-11 36.9-15.4 19.2-49.3 22.4-85.2 25.7-28.2 2.6-57.4 5.4-81.3 16.9v-144c32.5-10.2 56-40.5 56-76.3 0-44.2-35.8-80-80-80S0 35.8 0 80c0 35.8 23.5 66.1 56 76.3v199.3C23.5 365.9 0 396.2 0 432c0 44.2 35.8 80 80 80s80-35.8 80-80c0-34-21.2-63.1-51.2-74.6 3.1-5.2 7.8-9.8 14.9-13.4 16.2-8.2 40.4-10.4 66.1-12.8 42.2-3.9 90-8.4 118.2-43.4 14-17.4 21.1-39.8 21.6-67.9 31.6-10.8 54.4-40.7 54.4-75.9zM80 64c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm0 384c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zm224-320c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16z"></path>
+      </svg>
+      ''
+
+let icon-elements =
+      \(z : Icon) ->
+        merge
+          { man-plus = man-plus-icon-elements
+          , checklist = checklist-icon-elements
+          , branching = branching-icon-elements
+          }
+          z
+
+let value-prop-item-elements =
+      \(z : ValuePropItem) ->
+        ''
+        <div class="ftPoint">
+          <div class="iconWrapper small circle" style="width:28px;height:28px"><svg class="backdrop" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="42" r="14" transform="translate(-26 -28)" fill="rgb(166, 226, 46)" fill-rule="nonzero"></circle>
+            </svg>${icon-elements z.icon}</div>
           <div class="ftPoint__meta">
             <h3 class="ftPoint__title color-1 weight-text-m">${z.title}</h3>
             <div class="ftPoint__description">${z.content}</div>
@@ -120,45 +169,10 @@ let page-doc =
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
                     <div class="ft__description">
-                      <div class="ftPoint">
-                        <div class="iconWrapper small circle" style="width:28px;height:28px"><svg class="backdrop" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="42" r="14" transform="translate(-26 -28)" fill="rgb(166, 226, 46)" fill-rule="nonzero"></circle>
-                          </svg><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#000" height="28" width="28" viewBox="0 0 640 512">
-                            <path d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
-                          </svg></div>
-                        <div class="ftPoint__meta">
-                          <h3 class="ftPoint__title color-1 weight-text-m">Release the development resources</h3>
-                          <div class="ftPoint__description">
-                            <p>There is no need to develop, maintain or test the DB layer of your app. It can be automated.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="ftPoint">
-                        <div class="iconWrapper small circle" style="width:28px;height:28px"><svg class="backdrop" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="42" r="14" transform="translate(-26 -28)" fill="rgb(166, 226, 46)" fill-rule="nonzero"></circle>
-                          </svg><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#000" height="28" width="28" viewBox="0 0 512 512">
-                            <path d="M208 132h288c8.8 0 16-7.2 16-16V76c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h288c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h288c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zM64 368c-26.5 0-48.6 21.5-48.6 48s22.1 48 48.6 48 48-21.5 48-48-21.5-48-48-48zm92.5-299l-72.2 72.2-15.6 15.6c-4.7 4.7-12.9 4.7-17.6 0L3.5 109.4c-4.7-4.7-4.7-12.3 0-17l15.7-15.7c4.7-4.7 12.3-4.7 17 0l22.7 22.1 63.7-63.3c4.7-4.7 12.3-4.7 17 0l17 16.5c4.6 4.7 4.6 12.3-.1 17zm0 159.6l-72.2 72.2-15.7 15.7c-4.7 4.7-12.9 4.7-17.6 0L3.5 269c-4.7-4.7-4.7-12.3 0-17l15.7-15.7c4.7-4.7 12.3-4.7 17 0l22.7 22.1 63.7-63.7c4.7-4.7 12.3-4.7 17 0l17 17c4.6 4.6 4.6 12.2-.1 16.9z"></path>
-                          </svg></div>
-                        <div class="ftPoint__meta">
-                          <h3 class="ftPoint__title color-1 weight-text-m">Increase the reliability of your applications</h3>
-                          <div class="ftPoint__description">
-                            <p>Most DB-compatiblity bugs become impossible. The generated code is guaranteed to correctly match your schema.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="ftPoint">
-                        <div class="iconWrapper small circle" style="width:28px;height:28px"><svg class="backdrop" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="42" r="14" transform="translate(-26 -28)" fill="rgb(166, 226, 46)" fill-rule="nonzero"></circle>
-                          </svg><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#000" height="28" width="28" viewBox="0 0 384 512">
-                            <path d="M384 144c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 36.4 24.3 67.1 57.5 76.8-.6 16.1-4.2 28.5-11 36.9-15.4 19.2-49.3 22.4-85.2 25.7-28.2 2.6-57.4 5.4-81.3 16.9v-144c32.5-10.2 56-40.5 56-76.3 0-44.2-35.8-80-80-80S0 35.8 0 80c0 35.8 23.5 66.1 56 76.3v199.3C23.5 365.9 0 396.2 0 432c0 44.2 35.8 80 80 80s80-35.8 80-80c0-34-21.2-63.1-51.2-74.6 3.1-5.2 7.8-9.8 14.9-13.4 16.2-8.2 40.4-10.4 66.1-12.8 42.2-3.9 90-8.4 118.2-43.4 14-17.4 21.1-39.8 21.6-67.9 31.6-10.8 54.4-40.7 54.4-75.9zM80 64c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm0 384c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zm224-320c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16z"></path>
-                          </svg></div>
-                        <div class="ftPoint__meta">
-                          <h3 class="ftPoint__title color-1 weight-text-m">Version-control your DB development</h3>
-                          <div class="ftPoint__description">
-                            <p>pGenie facilitates database evolution under version control and continuous deployment by design.</p>
-                          </div>
-                        </div>
-                      </div>
+                      ${P.Text.concatMap
+                          ValuePropItem
+                          value-prop-item-elements
+                          page.value-prop}
                     </div>
                   </div>
                 </div>
@@ -350,4 +364,11 @@ let page-doc =
         </html>
         ''
 
-in  { page-doc, Page, WhatsComingItem, WhatPgenieCanDoItem, InstallButton }
+in  { page-doc
+    , Page
+    , WhatsComingItem
+    , WhatPgenieCanDoItem
+    , InstallButton
+    , Icon
+    , ValuePropItem
+    }
