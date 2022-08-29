@@ -17,8 +17,10 @@ let Icon = < man-plus | checklist | branching >
 let ValuePropItem = { title : Text, content : Text, icon : Icon }
 
 let Page =
-      { title : Text
-      , description : Text
+      { page-title : Text
+      , page-description : Text
+      , title : Text
+      , subtitle : Text
       , cli-version : Text
       , ga-id : Text
       , yandex-metrika-id : Text
@@ -127,10 +129,10 @@ let page-doc =
           <meta charset="utf-8">
           <meta http-equiv="x-ua-compatible" content="ie=edge">
           <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-          <title>${page.title}</title>
-          <meta name="twitter:title" content="${page.title}">
-          <meta name="description" content="${page.description}">
-          <meta name="twitter:description" content="${page.description}">
+          <title>${page.page-title}</title>
+          <meta name="twitter:title" content="${page.page-title}">
+          <meta name="description" content="${page.page-description}">
+          <meta name="twitter:description" content="${page.page-description}">
           <link rel="canonical" href="https://pgenie.io">
           <link rel="stylesheet" href="main.css">
           <link href="https://fonts.googleapis.com/css?family=Fira+Sans:700|Inter:700,400,500&amp;display=fallback" rel="stylesheet">
@@ -150,7 +152,7 @@ let page-doc =
           </div>
           <div id="titles" class="section section--titles section--center" style="background-color:black;padding:180px 0 120px 0;--pdx-min-height:0px;--wr-max:1030px">
             <div class="wr">
-              <h1 class="color-1 weight-title-h font-title section__title center">${page.description}</h1>
+              <h1 class="color-1 weight-title-h font-title section__title center">${page.title}</h1>
               <p class="weight-text section__subtitle center" style="margin-bottom:0">Validates queries, generates multiplatform client code</p>
             </div>
           </div>
