@@ -4,11 +4,12 @@ in  Index.page-doc
       { ga-id = "G-TTTTY8GJZQ"
       , yandex-metrika-id = "89787597"
       , cloudflare-analytics-token = None Text
-      , page-title = "pGenie: SQL transpiler for PostgreSQL"
-      , page-description =
+      , meta-title = "pGenie: SQL transpiler for PostgreSQL"
+      , meta-description =
           "Reduce the development by generating client SDKs from plain SQL. Raise the quality with automatic validation of migrations and queries. No more mapping fuss, impedance mismatch or compatibility bugs! Haskell, Java, more coming."
-      , title = "SQL transpiler for PostgreSQL"
-      , subtitle = "Validates queries, generates multiplatform client code"
+      , content-title = "SQL transpiler for PostgreSQL"
+      , content-subtitle =
+          "Validates queries, generates multiplatform client code"
       , value-prop =
         [ { title = "Release the development resources"
           , content =
