@@ -7,7 +7,7 @@ in  Index.page-doc
       , meta-title = "pGenie: Multiplatform SQL transpiler for PostgreSQL"
       , meta-description =
           "Reduce the development by generating client SDKs from plain SQL. Raise the quality with automatic validation of migrations and queries. No more mapping fuss, impedance mismatch or compatibility bugs! Haskell, Java, more coming."
-      , content-title = "Powerful SQL transpiler for PostgreSQL"
+      , content-title = "SQL transpiler for PostgreSQL"
       , content-subtitle =
           "Validates queries, generates multiplatform client code"
       , value-prop =
