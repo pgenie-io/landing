@@ -4,10 +4,10 @@ in  Index.page-doc
       { ga-id = "G-TTTTY8GJZQ"
       , yandex-metrika-id = "89787597"
       , cloudflare-analytics-token = None Text
-      , meta-title = "pGenie: SQL transpiler for PostgreSQL"
+      , meta-title = "pGenie: Multiplatform SQL transpiler for PostgreSQL"
       , meta-description =
           "Reduce the development by generating client SDKs from plain SQL. Raise the quality with automatic validation of migrations and queries. No more mapping fuss, impedance mismatch or compatibility bugs! Haskell, Java, more coming."
-      , content-title = "SQL transpiler for PostgreSQL"
+      , content-title = "Powerful SQL transpiler for PostgreSQL"
       , content-subtitle =
           "Validates queries, generates multiplatform client code"
       , value-prop =
@@ -18,7 +18,7 @@ in  Index.page-doc
           }
         , { title = "Increase the reliability of your applications"
           , content =
-              "Most DB-compatiblity bugs become impossible. The generated code is guaranteed to correctly match your schema."
+              "Most DB-compatiblity bugs become impossible. The generated code is guaranteed to match your schema."
           , icon = Index.Icon.checklist
           }
         , { title = "Version-control your DB development"
