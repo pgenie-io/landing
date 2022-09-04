@@ -1,16 +1,9 @@
 on:
-  workflow_call:
-    inputs:
-      version-position:
-        type: string
-        required: true
-        description: |
-          Version position to bump on successful deployment.
-
-          One of:
-          - major
-          - minor
-          - patch
+  push:
+    branches:
+      - major
+      - minor
+      - patch
 
 jobs:
   deploy:
@@ -52,5 +45,5 @@ jobs:
         env:
           RELEASE_BRANCHES: major,minor,patch
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BUMP: ${{ inputs.version-position }}
+          DEFAULT_BUMP: ${{ github.ref_name }}
           WITH_V: true
