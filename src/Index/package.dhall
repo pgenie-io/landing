@@ -240,7 +240,7 @@ let page-doc =
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
                     <h2 id="status-and-pricing" class="hero__title color-1 weight-title-h font-title">Status and pricing</h2>
-                    <p class="hero__subtitle weight-text">pGenie is in <span style="color:#66D9EF;font-weight:bold">public beta</span>. All features are available for <span style="color:#66D9EF;font-weight:bold">free</span> until it goes out of beta. <span style="color:#66D9EF;font-weight:bold">Free tier</span> will remain.</p>
+                    <p class="hero__subtitle weight-text">pGenie is in <span style="color:#66D9EF;font-weight:bold">public beta</span>. All features are available for <span style="color:#66D9EF;font-weight:bold">free</span> until it goes out of beta. <span style="color:#66D9EF;font-weight:bold">Free tier</span> will remain available.</p>
                     <div class="ctas"></div>
                     <div class="hero__ctaInfo"></div>
                   </div>
