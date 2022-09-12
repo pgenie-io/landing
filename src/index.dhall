@@ -9,7 +9,7 @@ in  Index.page-doc
           "Reduce the development by generating client SDKs from plain SQL. Raise the quality with automatic validation of migrations and queries. No more mapping fuss, impedance mismatch or compatibility bugs! Haskell, Java, more coming."
       , content-title = "SQL transpiler for PostgreSQL"
       , content-subtitle =
-          "Validates queries, generates multiplatform client code"
+          "Validates queries, generates typesafe multiplatform client code"
       , value-prop =
         [ { title = "Release the development resources"
           , content =
