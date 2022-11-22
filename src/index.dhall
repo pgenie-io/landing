@@ -93,7 +93,7 @@ in  Index.page-doc
         , { title = "Advanced datatypes support"
           , content =
               ''
-                <p>Generation of code that easily integrates with composites, enums and arrays.</p>
+                <p>Generation of code that easily integrates with composites, enums and arrays. That bit is only supported for <b>Haskell</b> for now.</p>
               ''
           }
         ]
