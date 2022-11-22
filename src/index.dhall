@@ -32,10 +32,6 @@ in  Index.page-doc
           , content =
               "Generation of code that integrates with stored procedures and functions."
           }
-        , { title = "Advanced datatypes support"
-          , content =
-              "Generation of code that integrates with composites, enums and other advanced types."
-          }
         , { title = "GitHub Actions"
           , content =
               "Specialized GitHub actions for continuous deployment of the generated code. For instance, for publishing the generated packages into your private Maven repository."
@@ -92,6 +88,12 @@ in  Index.page-doc
           , content =
               ''
                 <p>Generate client libraries for <b>Haskell</b> and <b>Java</b>. These libraries provide high-level typesafe APIs specialised to your DB. Type-mapping, parameterisation, result decoding, query execution and not only - are all solved for you and are hidden under the hood of easy to use APIs.</p>
+              ''
+          }
+        , { title = "Advanced datatypes support"
+          , content =
+              ''
+                <p>Generation of code that easily integrates with composites, enums and arrays.</p>
               ''
           }
         ]
