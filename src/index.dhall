@@ -75,13 +75,13 @@ in  Index.page-doc
         [ { title = "Schema migrations validation"
           , content =
               ''
-                <p>Ensure that the schema migration scripts that you provide won&#x27;t cause any errors.</p>
+                <p>Quickly ensure that the schema migration scripts that you provide won&#x27;t cause any errors.</p>
               ''
           }
         , { title = "Queries validation"
           , content =
               ''
-                <p>Ensure that the queries won&#x27;t cause any compatibility errors.</p>
+                <p>As quickly ensure that the queries won&#x27;t cause any compatibility errors.</p>
               ''
           }
         , { title = "Client SDKs generation"
@@ -93,7 +93,7 @@ in  Index.page-doc
         , { title = "Advanced datatypes support"
           , content =
               ''
-                <p>Generation of code that easily integrates with composites, enums and arrays. That bit is only supported for <b>Haskell</b> for now.</p>
+                <p>Generate code that easily integrates with composites, enums and arrays. That bit is only provided for <b>Haskell</b> for now.</p>
               ''
           }
         ]
