@@ -204,7 +204,7 @@ let page-doc =
                 <div class="zigzagItem">
                   <div class="zigzagItem__graphic"><img src="stage-3.png" class="" srcset="stage-3-2x.png 2x" alt="Generated Code"></div>
                   <div class="zigzagItem__content"><span class="zigzagItem__number"></span>
-                    <h3 class="zigzagItem__title color-1 weight-text-m">Generate Data Access Layer SDKs</h3>
+                    <h3 class="zigzagItem__title color-1 weight-text-m">Generate SDKs</h3>
                     <div class="zigzagItem__text"><p>By running the pGenie CLI app</p></div>
                   </div>
                 </div>
