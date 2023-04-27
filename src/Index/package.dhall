@@ -299,7 +299,7 @@ let page-doc =
                 <div class="ft__wrapper" style="max-width:485px">
                   <div class="ft__content">
                     <h2 id="keep-informed" class="hero__title color-1 weight-title-h font-title">Keep informed</h2>
-                    <p class="hero__subtitle weight-text">Stay up to date with our latest developments by subscribing to our Twitter account.</p>
+                    <p class="hero__subtitle weight-text">Stay up to date with our latest developments by subscribing to our Twitter feed.</p>
                     <div class="ctas"><a class="btn btn--large" href="https://twitter.com/pgenie_io" target="_blank"
                       ${gtag-onclick-attributes "open-twitter" "call_to_action"}
                       >
