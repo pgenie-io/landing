@@ -21,9 +21,9 @@ in  Index.page-doc
               "Most DB-compatiblity bugs become impossible. The generated code is guaranteed to match your schema."
           , icon = Index.Icon.checklist
           }
-        , { title = "Version-control your DB development"
+        , { title = "Version-control your migrations and your queries together"
           , content =
-              "pGenie facilitates database evolution under version control and continuous deployment by design."
+              "Keep your queries together with the schema migrations. Use pGenie to ensure that they are always compatible."
           , icon = Index.Icon.branching
           }
         ]
