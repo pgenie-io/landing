@@ -5000,3 +5000,20 @@ a:not(.btn):hover {
 body {
   background-color: black;
 }
+
+#intro .ftPoint {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+#intro .ftPoint__meta {
+  max-width: 100%;
+}
+
+#intro .weight-text-m {
+  font-weight: 200;
+}
+
+#intro b {
+  font-weight: 600;
+}
