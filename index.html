@@ -208,6 +208,14 @@
     .pill:hover { border-color: var(--border-2); color: var(--text); }
     .pill-icon { color: var(--accent); font-size: 15px; }
 
+    /* Spacer used where hero pills were removed */
+    .hero-pills-spacer {
+      height: 142px;
+    }
+    @media (max-width: 640px) {
+      .hero-pills-spacer { height: 56px; }
+    }
+
     .hero-actions {
       display: flex;
       justify-content: center;
@@ -787,14 +795,7 @@
         pGenie validates SQL, manages indexes, and generates <strong>type-safe client SDKs</strong><br />
         all derived from the migrations.
       </p>
-      <div class="hero-pills">
-        <span class="pill"><span class="pill-icon">✓</span> Open source</span>
-        <span class="pill"><span class="pill-icon">✓</span> Plain SQL, PostgreSQL dialect</span>
-        <span class="pill"><span class="pill-icon">✓</span> Correctness &amp; compatibility checks</span>
-        <span class="pill"><span class="pill-icon">✓</span> Automated index management</span>
-        <span class="pill"><span class="pill-icon">✓</span> Type-safe SDKs</span>
-        <span class="pill"><span class="pill-icon">✓</span> Custom generators ecosystem</span>
-      </div>
+      <div class="hero-pills-spacer" aria-hidden="true"></div>
       <div class="hero-actions">
         <a href="#install" class="btn-primary">
           Get started free
