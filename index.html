@@ -25,6 +25,9 @@
       --accent-glow: rgba(91,138,245,0.25);
       --green:       #34d399;
       --green-dim:   rgba(52,211,153,0.10);
+      --gold:        #d4a547;
+      --gold-dim:    rgba(212,165,71,0.08);
+      --gold-glow:   rgba(212,165,71,0.28);
       --radius:      12px;
       --radius-sm:   8px;
     }
@@ -34,6 +37,8 @@
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpolygon points='30,2 58,30 30,58 2,30' fill='none' stroke='rgba(212,165,71,.042)' stroke-width='.8'/%3E%3Cpolygon points='30,12 48,30 30,48 12,30' fill='none' stroke='rgba(212,165,71,.022)' stroke-width='.6'/%3E%3C/svg%3E");
+      background-size: 60px 60px;
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -141,9 +146,9 @@
       font-weight: 600;
       letter-spacing: .08em;
       text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-dim);
-      border: 1px solid rgba(91,138,245,0.25);
+      color: var(--gold);
+      background: var(--gold-dim);
+      border: 1px solid rgba(212,165,71,0.3);
       padding: 5px 14px;
       border-radius: 100px;
       margin-bottom: 32px;
@@ -151,8 +156,8 @@
     .hero-badge-dot {
       width: 6px; height: 6px;
       border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 6px var(--accent);
+      background: var(--gold);
+      box-shadow: 0 0 6px var(--gold-glow);
     }
 
     .hero h1 {
@@ -167,7 +172,7 @@
       margin-right: auto;
     }
     .hero h1 span {
-      background: linear-gradient(135deg, #5b8af5 0%, #a78bfa 100%);
+      background: linear-gradient(135deg, #d4a547 0%, #e8a87c 35%, #a78bfa 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -311,7 +316,7 @@
       font-weight: 700;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--gold);
       margin-bottom: 14px;
     }
     .section-title {
@@ -606,7 +611,7 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
     }
     .best-practice-box h3 {
       font-size: 22px;
@@ -649,7 +654,9 @@
       bottom: -200px; left: 50%;
       transform: translateX(-50%);
       width: 800px; height: 600px;
-      background: radial-gradient(ellipse at 50% 80%, rgba(91,138,245,0.15) 0%, transparent 65%);
+      background:
+        radial-gradient(ellipse at 50% 80%, rgba(91,138,245,0.10) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 50%, rgba(212,165,71,0.11) 0%, transparent 55%);
       pointer-events: none;
     }
     .cta-section > * { position: relative; z-index: 1; }
@@ -764,6 +771,66 @@
       .cards-grid { grid-template-columns: 1fr; }
       .features-strip-inner { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ─────────────────────────────────────────
+       ARABIAN NIGHTS — GENIE VIBE
+    ───────────────────────────────────────── */
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.06; transform: scale(0.65); }
+      50%       { opacity: 0.55; transform: scale(1.2); }
+    }
+    @keyframes float-lamp {
+      0%, 100% { transform: translateY(0px) rotate(-3deg); }
+      50%       { transform: translateY(-9px) rotate(3deg); }
+    }
+
+    /* Twinkling gold stars scattered behind hero */
+    .magic-star {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold-glow), 0 0 2px rgba(232,192,106,0.5);
+      animation: twinkle var(--dur, 3s) ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+      width: var(--sz, 4px);
+      height: var(--sz, 4px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Floating genie lamp in CTA */
+    .cta-lamp {
+      display: block;
+      margin: 0 auto 24px;
+      animation: float-lamp 5s ease-in-out infinite;
+      filter: drop-shadow(0 4px 18px rgba(212,165,71,0.45)) drop-shadow(0 0 4px rgba(212,165,71,0.2));
+    }
+
+    /* Thin ornamental arabesque divider */
+    .arabesque-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto 28px;
+      opacity: 0.5;
+    }
+    .arabesque-divider::before,
+    .arabesque-divider::after {
+      content: '';
+      flex: 1;
+      max-width: 110px;
+      height: 1px;
+    }
+    .arabesque-divider::before { background: linear-gradient(90deg, transparent, var(--gold)); }
+    .arabesque-divider::after  { background: linear-gradient(90deg, var(--gold), transparent); }
+    .arabesque-divider-gem {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      box-shadow: 0 0 6px var(--gold-glow);
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -785,10 +852,20 @@
 
   <!-- ── HERO ── -->
   <section class="hero">
+    <!-- Twinkling stars — Arabian Nights vibe -->
+    <span class="magic-star" style="--sz:3px;--delay:0s;--dur:3.2s;top:22%;left:12%"></span>
+    <span class="magic-star" style="--sz:5px;--delay:.7s;--dur:2.8s;top:18%;left:78%"></span>
+    <span class="magic-star" style="--sz:2px;--delay:1.4s;--dur:4s;top:65%;left:22%"></span>
+    <span class="magic-star" style="--sz:4px;--delay:2.1s;--dur:3.5s;top:32%;left:64%"></span>
+    <span class="magic-star" style="--sz:3px;--delay:.3s;--dur:2.5s;top:55%;left:88%"></span>
+    <span class="magic-star" style="--sz:2px;--delay:1.8s;--dur:3.8s;top:74%;left:70%"></span>
+    <span class="magic-star" style="--sz:4px;--delay:2.5s;--dur:3s;top:42%;left:8%"></span>
+    <span class="magic-star" style="--sz:3px;--delay:.9s;--dur:4.2s;top:28%;left:45%"></span>
     <div class="container">
       <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
+        <span aria-hidden="true" style="font-size:14px;line-height:1;margin-left:2px">🐘</span>
         SQL-first PostgreSQL tooling
+        <span aria-hidden="true" style="font-size:14px;line-height:1;margin-left:2px">🐘</span>
       </div>
       <h1>Write SQL.<br /><span>Ship confidence.</span></h1>
       <p class="hero-tagline">
@@ -1038,6 +1115,27 @@
   <!-- ── CTA / INSTALL ── -->
   <section class="cta-section" id="install">
     <div class="container">
+      <!-- Genie lamp illustration -->
+      <svg class="cta-lamp" width="72" height="60" viewBox="0 0 92 75" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Smoke wisps -->
+        <path d="M43 22 C40 15 45 8 41 2" stroke="#d4a547" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M48 20 C51 13 47 6 51 1" stroke="#d4a547" stroke-width="1.3" stroke-linecap="round" opacity="0.65"/>
+        <path d="M38 23 C35 17 39 11 36 5" stroke="#d4a547" stroke-width="1.1" stroke-linecap="round" opacity="0.45"/>
+        <!-- Neck collar -->
+        <path d="M39 22 L53 22 L50 31 L42 31 Z" fill="#c4913a"/>
+        <!-- Lamp body -->
+        <path d="M21 49 C17 57 22 65 33 65 L65 65 C77 65 82 56 76 45 L70 31 C66 24 57 22 50 22 L42 22 C34 22 27 28 25 37 Z" fill="#d4a547"/>
+        <!-- Spout (left) -->
+        <path d="M21 49 C11 47 5 39 8 32 C11 27 18 29 21 35" fill="none" stroke="#c4913a" stroke-width="4" stroke-linecap="round"/>
+        <!-- Handle (right loop) -->
+        <path d="M76 44 C87 37 91 49 82 59 L73 64" fill="none" stroke="#c4913a" stroke-width="4" stroke-linecap="round"/>
+        <!-- Highlight -->
+        <path d="M38 34 C44 29 62 29 69 36" stroke="rgba(255,255,255,0.22)" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Base -->
+        <path d="M30 65 C26 65 22 68 22 71 L76 71 C76 68 72 65 68 65 Z" fill="#b8832e"/>
+        <rect x="19" y="70" width="62" height="5" rx="2.5" fill="#9a6b18"/>
+      </svg>
+      <div class="arabesque-divider" aria-hidden="true"><span class="arabesque-divider-gem"></span></div>
       <h2>Start using pGenie today</h2>
       <p>Download the binary for your platform and run your first generation in minutes.</p>
       <div class="download-buttons">
