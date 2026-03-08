@@ -776,12 +776,18 @@
        ARABIAN NIGHTS — GENIE VIBE
     ───────────────────────────────────────── */
     @keyframes twinkle {
-      0%, 100% { opacity: 0.06; transform: scale(0.3); }
+      0%, 100% { opacity: 0; transform: scale(0.3); }
       50%      { opacity: 0.55; transform: scale(0.6); }
     }
     @keyframes float-lamp {
-      0%, 100% { transform: translateY(0px) rotate(-3deg); }
-      50%      { transform: translateY(-9px) rotate(3deg); }
+      0%, 100% {
+        transform: translateY(0px) rotate(-3deg);
+        filter: drop-shadow(0 6px 22px rgba(212,165,71,0.50)) drop-shadow(0 0 6px rgba(212,165,71,0.22));
+      }
+      50% {
+        transform: translateY(-9px) rotate(2deg);
+        filter: drop-shadow(0px 6px 22px rgba(212,165,71,0.80)) drop-shadow(0 0 6px rgba(212,165,71,0));
+      }
     }
 
     /* Twinkling stars scattered behind hero */
@@ -803,7 +809,7 @@
     .cta-lamp {
       display: block;
       margin: 0 auto 24px;
-      width: 160px;
+      width: 100px;
       height: auto;
       overflow: visible;
       animation: float-lamp 5s ease-in-out infinite;
