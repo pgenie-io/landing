@@ -802,30 +802,29 @@
     .cta-lamp {
       display: block;
       margin: 0 auto 24px;
+      width: 160px;
+      height: auto;
+      overflow: visible;
       animation: float-lamp 5s ease-in-out infinite;
-      filter: drop-shadow(0 4px 18px rgba(212,165,71,0.45)) drop-shadow(0 0 4px rgba(212,165,71,0.2));
+      filter: drop-shadow(0 6px 22px rgba(212,165,71,0.50)) drop-shadow(0 0 6px rgba(212,165,71,0.22));
     }
 
     /* Smoke wisps animation for the lamp */
-    @keyframes smoke-rise {
-      0%   { opacity: 0; transform: translateY(8px) scale(0.96); }
-      20%  { opacity: 0.22; }
-      60%  { opacity: 0.55; transform: translateY(-18px) scale(1.06); }
-      100% { opacity: 0; transform: translateY(-36px) scale(1.12); }
+    /* Lamp glow animation (pulsing soft gold under/around lamp) */
+    @keyframes pulse-glow {
+      0%   { opacity: 0.22; transform: scale(0.96); }
+      50%  { opacity: 0.55; transform: scale(1.06); }
+      100% { opacity: 0.22; transform: scale(0.96); }
     }
-    .smoke {
-      fill: none;
-      stroke: var(--gold);
-      stroke-linecap: round;
+    .cta-lamp .lamp-glow {
       transform-box: fill-box;
-      transform-origin: 50% 100%;
-      animation: smoke-rise var(--dur,4.2s) ease-in-out infinite;
-      stroke-width: 1.4;
-      opacity: 0;
+      transform-origin: 50% 50%;
+      filter: blur(12px);
+      mix-blend-mode: screen;
+      animation: pulse-glow 3.8s ease-in-out infinite;
+      opacity: 0.32;
+      pointer-events: none;
     }
-    .smoke-1 { --dur: 4.6s; animation-delay: 0s; stroke-width:1.8; }
-    .smoke-2 { --dur: 5.2s; animation-delay: 0.9s; stroke-width:1.3; }
-    .smoke-3 { --dur: 4.0s; animation-delay: 1.6s; stroke-width:1.1; }
 
     /* Thin ornamental arabesque divider */
     .arabesque-divider {
@@ -1142,25 +1141,19 @@
   <!-- ── CTA / INSTALL ── -->
   <section class="cta-section" id="install">
     <div class="container">
-      <!-- Genie lamp illustration -->
-      <svg class="cta-lamp" width="72" height="60" viewBox="0 0 92 75" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Smoke wisps -->
-          <path class="smoke smoke-1" d="M43 22 C40 15 45 8 41 2" stroke="#d4a547" stroke-width="1.8" stroke-linecap="round"/>
-          <path class="smoke smoke-2" d="M48 20 C51 13 47 6 51 1" stroke="#d4a547" stroke-width="1.3" stroke-linecap="round" opacity="0.65"/>
-          <path class="smoke smoke-3" d="M38 23 C35 17 39 11 36 5" stroke="#d4a547" stroke-width="1.1" stroke-linecap="round" opacity="0.45"/>
-        <!-- Neck collar -->
-        <path d="M39 22 L53 22 L50 31 L42 31 Z" fill="#c4913a"/>
-        <!-- Lamp body -->
-        <path d="M21 49 C17 57 22 65 33 65 L65 65 C77 65 82 56 76 45 L70 31 C66 24 57 22 50 22 L42 22 C34 22 27 28 25 37 Z" fill="#d4a547"/>
-        <!-- Spout (left) -->
-        <path d="M21 49 C11 47 5 39 8 32 C11 27 18 29 21 35" fill="none" stroke="#c4913a" stroke-width="4" stroke-linecap="round"/>
-        <!-- Handle (right loop) -->
-        <path d="M76 44 C87 37 91 49 82 59 L73 64" fill="none" stroke="#c4913a" stroke-width="4" stroke-linecap="round"/>
-        <!-- Highlight -->
-        <path d="M38 34 C44 29 62 29 69 36" stroke="rgba(255,255,255,0.22)" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- Base -->
-        <path d="M30 65 C26 65 22 68 22 71 L76 71 C76 68 72 65 68 65 Z" fill="#b8832e"/>
-        <rect x="19" y="70" width="62" height="5" rx="2.5" fill="#9a6b18"/>
+      <!-- Genie lamp illustration (embedded vector file) -->
+      <svg class="cta-lamp" width="220" height="160" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <image href="static/lamp.svg" x="24" y="28" width="252" height="144" preserveAspectRatio="xMidYMid meet"/>
+        <!-- Lamp glow overlay (pulsing) -->
+        <defs>
+          <radialGradient id="ctaLampGlow" cx="50%" cy="45%" r="50%">
+            <stop offset="0%" stop-color="rgba(212,165,71,0.95)"/>
+            <stop offset="40%" stop-color="rgba(212,165,71,0.40)"/>
+            <stop offset="100%" stop-color="rgba(212,165,71,0)"/>
+          </radialGradient>
+        </defs>
+        <!-- approximate center of lamp image: cx=150 cy=100, radius tuned to cover lamp body -->
+        <circle class="lamp-glow" cx="150" cy="100" r="70" fill="url(#ctaLampGlow)" />
       </svg>
       <div class="arabesque-divider" aria-hidden="true"><span class="arabesque-divider-gem"></span></div>
       <h2>Start using pGenie today</h2>
