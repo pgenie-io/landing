@@ -779,16 +779,6 @@
       0%, 100% { opacity: 0; transform: scale(0.3); }
       50%      { opacity: 0.55; transform: scale(0.6); }
     }
-    @keyframes float-lamp {
-      0%, 100% {
-        transform: translateY(0px) rotate(-3deg);
-        filter: drop-shadow(0 6px 22px rgba(212,165,71,0.50)) drop-shadow(0 0 6px rgba(212,165,71,0.22));
-      }
-      50% {
-        transform: translateY(-9px) rotate(2deg);
-        filter: drop-shadow(0px 6px 22px rgba(212,165,71,0.80)) drop-shadow(0 0 6px rgba(212,165,71,0));
-      }
-    }
 
     /* Twinkling stars scattered behind hero */
     .magic-star {
@@ -805,6 +795,14 @@
       opacity: 0;
     }
 
+    @keyframes float-lamp {
+      0%, 100% {
+        transform: translateY(0px) rotate(-3deg);
+      }
+      50% {
+        transform: translateY(-9px) rotate(2deg);
+      }
+    }
     /* Floating genie lamp in CTA */
     .cta-lamp {
       display: block;
@@ -816,20 +814,19 @@
       filter: drop-shadow(0 6px 22px rgba(212,165,71,0.50)) drop-shadow(0 0 6px rgba(212,165,71,0.22));
     }
 
-    /* Smoke wisps animation for the lamp */
     /* Lamp glow animation (pulsing soft gold under/around lamp) */
     @keyframes pulse-glow {
       0%   { opacity: 0.22; transform: scale(0.96); }
-      50%  { opacity: 0.55; transform: scale(1.06); }
+      50%  { opacity: 0.75; transform: scale(1.16); }
       100% { opacity: 0.22; transform: scale(0.96); }
     }
     .cta-lamp .lamp-glow {
       transform-box: fill-box;
       transform-origin: 50% 50%;
-      filter: blur(12px);
+      filter: blur(22px);
       mix-blend-mode: screen;
-      animation: pulse-glow 3.8s ease-in-out infinite;
-      opacity: 0.32;
+      animation: pulse-glow 4s ease-in-out infinite;
+      opacity: 0.22;
       pointer-events: none;
     }
 
