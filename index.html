@@ -772,6 +772,120 @@
       .features-strip-inner { grid-template-columns: 1fr 1fr; }
     }
 
+    /* ─────────────────────────────────────────
+       NAV GITHUB STAR
+    ───────────────────────────────────────── */
+    .nav-gh-star {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      color: var(--text-2) !important;
+      border: 1px solid var(--border-2) !important;
+      padding: 5px 13px !important;
+      border-radius: var(--radius-sm) !important;
+      transition: color .2s, border-color .2s, background .2s !important;
+    }
+    .nav-gh-star:hover {
+      color: var(--gold) !important;
+      border-color: rgba(212,165,71,0.35) !important;
+      background: var(--gold-dim) !important;
+    }
+    .nav-gh-star svg { flex-shrink: 0; }
+
+    /* ─────────────────────────────────────────
+       GITHUB STAR STRIP
+    ───────────────────────────────────────── */
+    .github-strip {
+      padding: 0 0 72px;
+      position: relative;
+      z-index: 1;
+    }
+    .github-strip-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 36px;
+      background: var(--surface);
+      border: 1px solid var(--border-2);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background .2s, border-color .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .github-strip-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(212,165,71,0.45) 50%, transparent 100%);
+    }
+    .github-strip-card:hover {
+      background: var(--surface-2);
+      border-color: rgba(212,165,71,0.28);
+    }
+    .github-strip-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .github-strip-icon {
+      flex-shrink: 0;
+      width: 46px; height: 46px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-2);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      transition: border-color .2s, color .2s;
+    }
+    .github-strip-card:hover .github-strip-icon {
+      border-color: rgba(212,165,71,0.35);
+      color: var(--gold);
+    }
+    .github-strip-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -.01em;
+      margin-bottom: 3px;
+    }
+    .github-strip-sub {
+      font-size: 13px;
+      color: var(--text-2);
+    }
+    .github-star-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold);
+      background: var(--gold-dim);
+      border: 1px solid rgba(212,165,71,0.28);
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background .2s, border-color .2s;
+    }
+    .github-strip-card:hover .github-star-btn {
+      background: rgba(212,165,71,0.16);
+      border-color: rgba(212,165,71,0.45);
+    }
+    @media (max-width: 640px) {
+      .github-strip-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+      }
+    }
+
     /* Arabian-nights stars removed */
 
     @keyframes float-lamp {
@@ -848,6 +962,10 @@
         <a href="#how-it-works">How it works</a>
         <a href="#use-cases">Use cases</a>
         <a href="#llms">LLMs</a>
+        <a href="https://github.com/pgenie-io/pgenie" class="nav-gh-star" target="_blank" rel="noopener" aria-label="Star pGenie on GitHub">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Star
+        </a>
         <a href="#install" class="nav-cta">Install</a>
       </div>
     </div>
@@ -1149,6 +1267,27 @@
       </div>
       <a href="https://github.com/pgenie-io/pgenie" class="demo-link" target="_blank" rel="noopener">
         Install from source
+      </a>
+    </div>
+  </section>
+
+  <!-- ── GITHUB STAR STRIP ── -->
+  <section class="github-strip">
+    <div class="container">
+      <a href="https://github.com/pgenie-io/pgenie" class="github-strip-card" target="_blank" rel="noopener">
+        <div class="github-strip-left">
+          <div class="github-strip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <div>
+            <div class="github-strip-title">pGenie is open source</div>
+            <div class="github-strip-sub">Browse the code, open issues, and follow the project on GitHub</div>
+          </div>
+        </div>
+        <div class="github-star-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Star on GitHub
+        </div>
       </a>
     </div>
   </section>
