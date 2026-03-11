@@ -772,28 +772,7 @@
       .features-strip-inner { grid-template-columns: 1fr 1fr; }
     }
 
-    /* ─────────────────────────────────────────
-       ARABIAN NIGHTS — GENIE VIBE
-    ───────────────────────────────────────── */
-    @keyframes twinkle {
-      0%, 100% { opacity: 0; transform: scale(0.3); }
-      50%      { opacity: 0.55; transform: scale(0.6); }
-    }
-
-    /* Twinkling stars scattered behind hero */
-    .magic-star {
-      position: absolute;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 3px rgba(255,255,255,0.5);
-      animation: twinkle var(--dur, 3s) ease-in-out infinite;
-      animation-delay: var(--delay, 0s);
-      width: var(--sz, 2px);
-      height: var(--sz, 2px);
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0;
-    }
+    /* Arabian-nights stars removed */
 
     @keyframes float-lamp {
       0%, 100% {
@@ -876,15 +855,7 @@
 
   <!-- ── HERO ── -->
   <section class="hero">
-    <!-- Twinkling stars — Arabian Nights vibe -->
-    <span class="magic-star" style="--sz:3px;--delay:0s;--dur:3.2s;top:22%;left:12%"></span>
-    <span class="magic-star" style="--sz:5px;--delay:.7s;--dur:2.8s;top:18%;left:78%"></span>
-    <span class="magic-star" style="--sz:2px;--delay:1.4s;--dur:4s;top:65%;left:22%"></span>
-    <span class="magic-star" style="--sz:4px;--delay:2.1s;--dur:3.5s;top:32%;left:64%"></span>
-    <span class="magic-star" style="--sz:3px;--delay:.3s;--dur:2.5s;top:55%;left:88%"></span>
-    <span class="magic-star" style="--sz:2px;--delay:1.8s;--dur:3.8s;top:74%;left:70%"></span>
-    <span class="magic-star" style="--sz:4px;--delay:2.5s;--dur:3s;top:42%;left:8%"></span>
-    <span class="magic-star" style="--sz:3px;--delay:.9s;--dur:4.2s;top:28%;left:45%"></span>
+    <!-- stars removed -->
     <div class="container">
       <div class="hero-badge">
         <span aria-hidden="true" style="font-size:14px;line-height:1;margin-left:2px">🐘</span>
