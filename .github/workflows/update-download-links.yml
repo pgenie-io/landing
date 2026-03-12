@@ -1,0 +1,115 @@
+name: Update Download Links
+
+on:
+  workflow_dispatch:
+    inputs:
+      linux_x86_64_url:
+        description: "Download URL for Linux (x86_64)"
+        required: false
+        default: ""
+      macos_arm64_url:
+        description: "Download URL for macOS (Apple Silicon / arm64)"
+        required: false
+        default: ""
+      macos_x86_64_url:
+        description: "Download URL for macOS (Intel / x86_64)"
+        required: false
+        default: ""
+      windows_x86_64_url:
+        description: "Download URL for Windows (x86_64)"
+        required: false
+        default: ""
+
+jobs:
+  update-links:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout landing repo
+        uses: actions/checkout@v4
+
+      - name: Update download links in index.html
+        env:
+          LINUX_X86_64_URL: ${{ inputs.linux_x86_64_url }}
+          MACOS_ARM64_URL: ${{ inputs.macos_arm64_url }}
+          MACOS_X86_64_URL: ${{ inputs.macos_x86_64_url }}
+          WINDOWS_X86_64_URL: ${{ inputs.windows_x86_64_url }}
+        run: |
+          python3 - <<'EOF'
+          import os
+          import sys
+          from html.parser import HTMLParser
+
+          UPDATES = {
+              "dl-linux-x86_64":  os.environ.get("LINUX_X86_64_URL", "").strip(),
+              "dl-macos-arm64":   os.environ.get("MACOS_ARM64_URL", "").strip(),
+              "dl-macos-x86_64":  os.environ.get("MACOS_X86_64_URL", "").strip(),
+              "dl-windows-x86_64": os.environ.get("WINDOWS_X86_64_URL", "").strip(),
+          }
+
+          # Remove empty entries — only update IDs that were supplied
+          UPDATES = {k: v for k, v in UPDATES.items() if v}
+
+          if not UPDATES:
+              print("No URLs supplied — nothing to update.")
+              sys.exit(0)
+
+          with open("index.html", "r", encoding="utf-8") as f:
+              html = f.read()
+
+          import re
+
+          def update_anchor(html, element_id, url):
+              """
+              Find the <a> tag with the given id and:
+                - set (or add) href="<url>"
+                - remove aria-disabled="true"
+              """
+              # Match the opening <a ...> tag that contains id="<element_id>"
+              tag_re = re.compile(
+                  r'(<a\b[^>]*\bid=["\']' + re.escape(element_id) + r'["\'][^>]*>)',
+                  re.DOTALL,
+              )
+              m = tag_re.search(html)
+              if not m:
+                  print(f"WARNING: element id '{element_id}' not found — skipping.")
+                  return html
+
+              original_tag = m.group(1)
+              updated_tag = original_tag
+
+              # Remove any existing aria-disabled attribute
+              updated_tag = re.sub(r'\s*aria-disabled=["\'][^"\']*["\']', '', updated_tag)
+
+              # Replace existing href or inject one before the closing >
+              if re.search(r'\bhref=', updated_tag):
+                  updated_tag = re.sub(r'\bhref=["\'][^"\']*["\']', f'href="{url}"', updated_tag)
+              else:
+                  updated_tag = updated_tag[:-1] + f' href="{url}">'
+
+              html = html.replace(original_tag, updated_tag, 1)
+              print(f"Updated '{element_id}' → {url}")
+              return html
+
+          for element_id, url in UPDATES.items():
+              html = update_anchor(html, element_id, url)
+
+          with open("index.html", "w", encoding="utf-8") as f:
+              f.write(html)
+
+          print("index.html updated successfully.")
+          EOF
+
+      - name: Commit and push changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update binary download links"
+            git push
+          fi
