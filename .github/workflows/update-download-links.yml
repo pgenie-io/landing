@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout landing repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Update download links in index.html
         env:
@@ -43,9 +43,9 @@ jobs:
           from html.parser import HTMLParser
 
           UPDATES = {
-              "dl-linux-x86_64":  os.environ.get("LINUX_X86_64_URL", "").strip(),
-              "dl-macos-arm64":   os.environ.get("MACOS_ARM64_URL", "").strip(),
-              "dl-macos-x86_64":  os.environ.get("MACOS_X86_64_URL", "").strip(),
+              "dl-linux-x86_64": os.environ.get("LINUX_X86_64_URL", "").strip(),
+              "dl-macos-arm64": os.environ.get("MACOS_ARM64_URL", "").strip(),
+              "dl-macos-x86_64": os.environ.get("MACOS_X86_64_URL", "").strip(),
               "dl-windows-x86_64": os.environ.get("WINDOWS_X86_64_URL", "").strip(),
           }
 
@@ -110,6 +110,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: update binary download links"
+            git commit -m "Update binary download links"
             git push
           fi
