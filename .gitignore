@@ -13,6 +13,7 @@
 !/README.md
 !/CHANGELOG.md
 !/index.html
+!/CNAME
 
 # Unignore subtrees:
 !/.github/
